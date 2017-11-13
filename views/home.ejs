@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+
+<div class="container  height"  >
+
+
+       <% for(var j=0;j<company.length;j++){ %>
+
+
+         <div class="card card-outline-primary mb-3 text-center">
+ <div class="card-block">
+   <blockquote class="card-blockquote">
+     <div class="abc"><b><h2><a href= /<%=encodeURIComponent(company[j].company_name) %>/review ><%=company[j].company_name %></a></h2></b>
+       <b>PHONE NUMBER :<%=company[j].contact_no %></b><br>
+       <b>ADDRESS :<%=company[j].address %></b><br>
+       <b>AVERAGE RATING :<%=company[j].avg_rating %></b> <br>
+       <b>AVERAGE SALARY :<%=company[j].avg_salary %></b>
+   </blockquote>
+ </div>
+</div>
+
+
+           <% } %>
+
+
+
+
+
+
+   </div>
+
+
+
+
+    <%- include('partials/footer') %>

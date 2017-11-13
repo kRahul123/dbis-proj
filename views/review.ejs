@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+<div class="form-container">
+<h1 color=''>Review</h1>
+<% if(errors.length>0){%>
+    <% for(var i=0;i<errors.length;i++){%>
+      <div class="alert alert-danger"><%=errors[i].msg%></div>
+
+      <%}%><%}%>
+
+
+<form method="post" action="/review">
+    <div class="form-group">
+        <label for="c_name">company name</label>
+        <input type="text" name="c_name" id="c_name" class="form-control" value="<%= c[0].company_name|| '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="phone">Contact No.</label>
+        <input type="text" name="phone" id="phone" class="form-control" value="<%= c[0].contact_no || '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="address">Adderss</label>
+        <input type="text" name="address" id="address" class="form-control" value="<%= c[0].address || '' %>" required />
+    </div>
+
+    <div class="form-group">
+        <label for="domain">Company Domain</label>
+        <input type="text" name="domain" id="domain" class="form-control" value="<%= c[0].c_domain || '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="j_title">Job Title</label>
+        <input type="text" name="j_title" id="j_title" class="form-control" value="<%= locals.j_title || '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="number" name="salary" id="salary" class="form-control" value="<%= locals.salary || '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="r_title">Review Title</label>
+        <input type="text" name="r_title" id="r_title" class="form-control" value="<%= locals.r_title || '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="pros">Pros</label>
+        <input type="text" name="pros" id="pros" class="form-control" value="<%= locals.pros || '' %>" required />
+    </div>
+    <div class="form-group">
+        <label for="cons">Cons</label>
+        <input type="text" name="cons" id="cons" class="form-control" value="<%= locals.cons || '' %>" required />
+    </div>
+
+
+
+
+    <label for="a">Overall Rating</label>
+    <div class="star-rating">
+        <input type="radio" class="a" id="5-stars"  name="rating" value="5" />
+        <label for="5-stars" class="star">&#9733;</label>
+        <input type="radio" class="a" id="4-stars" name="rating" value="4" />
+        <label for="4-stars" class="star">&#9733;</label>
+        <input type="radio" class="a" id="3-stars" name="rating" value="3" />
+        <label for="3-stars" class="star">&#9733;</label>
+        <input type="radio" class="a" id="2-stars" name="rating" value="2" />
+        <label for="2-stars" class="star">&#9733;</label>
+        <input type="radio" class="a" id="1-star" name="rating" value="1" />
+        <label for="1-star" class="star">&#9733;</label>
+  </div>
+  <h4>Employee status</h4>
+  <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked value="current"> Current
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option2" autocomplete="off" value="former"> Former
+  </label>
+
+</div>
+<h1>  </h1>
+<div class="form-group">
+   <button type="submit"  class="btn btn-primary">Submit</button>
+</div>
+
+ </form>
+
+</div>
+
+
+
+<%- include('partials/footer') %>
